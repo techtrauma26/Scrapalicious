@@ -48,9 +48,22 @@ app.get("/scrape", function (req, res) {
     $(".css-4jyr1y").each(function(i, element) {
 
       var result = {};
-      result.link = $(this).children("a").attr("href");
-      result.title = $(this).children("a").children("h2").text().trim();
-      result.summary = $(this).children("a").children("p").text();
+
+      result.link = $(this)
+      .children("a")
+      .attr("href");
+
+      result.title = $(this)
+      .children("a")
+      .children("h2")
+      .text()
+      .trim();
+      
+      result.summary = $(this)
+      .children("a")
+      .children("p")
+      .text();
+
       db.Article.create(result)
         .then(function (dbArticle) {
           console.log(dbArticle);
