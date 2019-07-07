@@ -1,0 +1,39 @@
+<div class="modal fade modalNote" id="noteModal{{this._id}}" data-id={{this._id}} tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title"> {{this.title}}</h4>
+            </div>
+            <div class="modal-body">
+                {{#if this.note}}
+                
+                <div class="card">
+                    <div class="card-header">
+                        <p class="previousNotes"> {{this.note.body}}</p>
+                        <button type="button" class="btn btn-primary deleteNote" data-note-id={{this.note._id}} >Go Back</button>
+                    </div>
+                </div>
+                
+                {{else}}
+                <div class="card">
+                    <div class="card-body">
+                    </div>
+                </div>
+                {{/if}}
+                <form action="/notes/save/{{this._id}}" method="POST">
+                    <div class="form-group">
+                        <textarea id="noteText" data-noteid={{this._id}} class="form-control" rows="4" placeholder="New Note" name="body"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-id={{this._id}} type="submit" class="btn btn-primary saveNote">Save</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
