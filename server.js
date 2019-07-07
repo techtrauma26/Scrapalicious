@@ -14,7 +14,7 @@ app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.Promise = Promise;
+
 const port = process.env.PORT || 3000
 
 app.engine("handlebars", exphbs({
@@ -25,7 +25,8 @@ app.set("view engine", "handlebars");
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true });
+// mongoose.set('useCreateIndex', true);
 
 
 
@@ -58,7 +59,7 @@ app.get("/scrape", function (req, res) {
       .children("h2")
       .text()
       .trim();
-      
+
       result.summary = $(this)
       .children("a")
       .children("p")
