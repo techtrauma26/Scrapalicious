@@ -2,9 +2,10 @@
   "name": "scrapalicious",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,8 @@
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "logger": "0.0.1",
-    "mongoose": "^5.6.2",
-    "morgan": "^1.9.1",
-    "node": "^12.5.0",
-    "request": "^2.88.0"
+    "mongo": "^0.1.0",
+    "mongoose": "^5.6.3",
+    "morgan": "^1.9.1"
   }
 }
