@@ -23,7 +23,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapalicious";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true });
 // mongoose.set('useCreateIndex', true);
@@ -148,6 +148,6 @@ app.post("/articles/delete/:id", function (req, res) {
 });
 
 
-app.listen(port, function () {
-  console.log("App running on port " + port);
+app.listen(PORT, function () {
+  console.log("App running on port " + PORT);
 });
