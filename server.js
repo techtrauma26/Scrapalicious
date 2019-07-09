@@ -2,7 +2,7 @@ const exphbs = require("express-handlebars");
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const path = require("path");
+// const path = require("path");
 const app = express();
 const axios = require("axios");
 const cheerio = require("cheerio");
@@ -18,8 +18,8 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000
 
 app.engine("handlebars", exphbs({
-  defaultLayout: "main",
-  partialsDir: path.join(__dirname, "/views/layouts/partials")
+  defaultLayout: "main"
+  // partialsDir: path.join(__dirname, "/views/layouts/partials")
 }));
 app.set("view engine", "handlebars");
 
