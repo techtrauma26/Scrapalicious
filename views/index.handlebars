@@ -1,11 +1,9 @@
-    <div class="col-lg-12">
+    <div class="col-lg-12" id="homearticle1">
         {{#if article}} {{#each article}}
-        <div class="card">
+        <div class="card" id="homearticle">
             <div class="card-header">
                 <h4>{{this.title}}</h4>
             </div>
-        </div>
-        <div class="card">
             <div class="card-body">
                 <p> {{this.summary}}</p>
                 <a href={{this.link}} target="_blank">{{this.link}}</a>
@@ -13,7 +11,7 @@
                 <br>
                 <button type="button" class="btn btn-primary save" data-id={{this._id}}>Save Article</button>
             </div>
-        </div>
+    </div>
         {{/each}} {{else}}
         <div class="card">
             <div class="card-body">
