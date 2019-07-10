@@ -49,10 +49,10 @@ app.get("/scrape", function (req, res) {
     $(".css-4jyr1y").each(function(i, element) {
 
       var result = {};
-
-      result.link = $(this)
+      var partialLink = $(this)
       .children("a")
       .attr("href");
+      result.link = "https://www.nytimes.com/"+partialLink
 
       result.title = $(this)
       .children("a")
